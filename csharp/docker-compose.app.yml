@@ -1,0 +1,13 @@
+services:
+  kafkaapp:
+    build: .
+    image: kafkaapp:latest
+    deploy:
+      replicas: 1
+    environment:
+      Kafka__BootstrapServers: "kafka-0:9092,kafka-1:9092,kafka-2:9092"
+
+networks:
+  default:
+    external: true
+    name: kafkanet

@@ -1,0 +1,13 @@
+services:
+  kafkaapp-java:
+    build: .
+    image: kafkaapp-java:latest
+    deploy:
+      replicas: 1
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: "kafka-0:9092,kafka-1:9092,kafka-2:9092"
+
+networks:
+  default:
+    external: true
+    name: kafkanet
