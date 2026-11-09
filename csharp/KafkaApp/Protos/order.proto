@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option csharp_namespace = "KafkaApp.Messages";
+
+package kafkaapp;
+
+message OrderMessage {
+  int32 id = 1;
+  string description = 2;
+}
